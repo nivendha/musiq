@@ -11,6 +11,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
 import config from '../config';
+import './style/All.css';
 
 /* eslint-disable react/no-danger */
 
@@ -48,6 +49,7 @@ class Html extends React.Component {
             <link key={script} rel="preload" href={script} as="script" />
           ))}
           <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+          <link rel="stylesheet" href="./style/All.css" />
           {styles.map(style => (
             <style
               key={style.id}
