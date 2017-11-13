@@ -232,6 +232,7 @@ async function start() {
       {
         // https://www.browsersync.io/docs/options
         server: 'src/server.js',
+        files: ["build/public/style/*.css", "build/public/fonts/*.*"],
         middleware: [server],
         open: !process.argv.includes('--silent'),
         ...(isDebug ? {} : { notify: false, ui: false }),
