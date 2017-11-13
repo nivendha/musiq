@@ -11,7 +11,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
 import config from '../config';
-import './style/All.css';
 
 /* eslint-disable react/no-danger */
 

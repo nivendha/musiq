@@ -15,6 +15,8 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import overrideRules from './lib/overrideRules';
 import pkg from '../package.json';
 
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const isDebug = !process.argv.includes('--release');
 const isVerbose = process.argv.includes('--verbose');
 const isAnalyze =
@@ -100,7 +102,8 @@ const config = {
             ...(isDebug ? ['transform-react-jsx-source'] : []),
             // Adds __self attribute to JSX which React will use for some warnings
             // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-self
-            ...(isDebug ? ['transform-react-jsx-self'] : []),
+            ...(isDebug ? ['transform-react-jsx-self'] : [])
+            
           ],
         },
       },
@@ -289,6 +292,7 @@ const clientConfig = {
   },
 
   plugins: [
+    
     // Define free variables
     // https://webpack.js.org/plugins/define-plugin/
     new webpack.DefinePlugin({
@@ -441,6 +445,10 @@ const serverConfig = {
   ],
 
   plugins: [
+    new CopyWebpackPlugin([
+      { from: './src/style/All.css', to: './public/style/All.css' },
+      { from: './src/fonts', to: './public/fonts' }
+    ]),
     // Define free variables
     // https://webpack.js.org/plugins/define-plugin/
     new webpack.DefinePlugin({
