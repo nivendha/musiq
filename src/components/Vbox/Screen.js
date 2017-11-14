@@ -30,7 +30,7 @@ class Screen extends React.Component {
                     <span className="pull-right text-sm">101,400 <br />Followers</span>
                     <span className="h2 font-thin">Soph Ashe</span>
                 </div>
-                <img className="img-full" src={"./Musik _ Web Application_files/m43.jpg"}  alt="..." />
+                <img className="img-full" src={"./images/m43.jpg"}  alt="..." />
             </div>
         );
     }

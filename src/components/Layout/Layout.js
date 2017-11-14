@@ -25,10 +25,10 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        <Header />
-        {this.props.children}
-      </div>
+        <section className="vbox">
+          <Header />
+          {this.props.children}
+        </section>
     );
   }
 }

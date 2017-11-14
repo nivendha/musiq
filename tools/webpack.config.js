@@ -446,8 +446,7 @@ const serverConfig = {
 
   plugins: [
     new CopyWebpackPlugin([
-      { from: './src/style/All.css', to: './public/style/All.css' },
-      { from: './src/fonts', to: './public/fonts' }
+      { from: './src/public', to: './public/' }
     ]),
     // Define free variables
     // https://webpack.js.org/plugins/define-plugin/
